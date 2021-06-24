@@ -7,13 +7,12 @@ let candidateName = "";
 let question;
 let correctAnswer;
 let candidateAnswer;
-let questions = ['1) Who was the first American woman in space?', '2) True or false: 5000 kilometer == 5 kilometers?', '3) (5 + 3)/2 * 10 = ?',"4) Given the array [8, 'orbit', 'trajectory' 45], what entry is at index 2?", "5) What is the minimum crew size for the ISS?"];
+let questions = ['1) Who was the first American woman in space? ', '2) True or false: 5000 kilometer == 5 kilometers? ', '3) (5 + 3)/2 * 10 = ?',"4) Given the array [8, 'orbit', 'trajectory' 45], what entry is at index 2? ", "5) What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 const input = require('readline-sync');
 let numberCorrect = 0;
 let overallGrade;
-
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -24,18 +23,17 @@ console.log("Candidate Name: "  + candidateName);
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i = 0; i < questions.length; i++){
-  candidateAnswers[i] = input.question(questions[i]); 
-
+  candidateAnswers[i] = input.question(questions[i]);
    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
   }
  //console.log("Incorrect!");  
-  }
+  } 
 }
+
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
 
  for (let i = 0; i < candidateAnswers.length; i++){
 console.log(`${questions[i]}\n`);   
@@ -43,14 +41,14 @@ console.log(`Your answer: ${candidateAnswers[i]}\n`);
 console.log(`Correct Answer: ${correctAnswers[i]}\n`);
  }
 
-let overallGrade = numberCorrect / 5*100 + '%';
-console.log(`Your overall grade is ${overallGrade}\n`);
+overallGrade = numberCorrect / 5*100 + '%';
+console.log('>>> ' + `Overall Grade: ${overallGrade}` + ' <<<');
 
   let grade = numberCorrect / 5;
   if (grade >= .8){
-    console.log('You have passed!');
+    console.log('>>> ' + 'Status: PASSED' + ' <<<');
   } else {
-    console.log('You have failed!');
+    console.log('>>> ' + 'Status: FAILED' + ' <<<');
   }
   return grade;
 }
