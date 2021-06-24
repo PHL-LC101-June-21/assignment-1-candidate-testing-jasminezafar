@@ -35,10 +35,9 @@ function askQuestion() {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
   }
-  else {
-    numberCorrect = 0;
+ 
     //console.log("Incorrect!");
-  }
+  
   }
 
 }
@@ -47,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
  for (let i = 0; i < candidateAnswers.length; i++){
-console.log(`${questions[i]}`);
+console.log(`${questions[i]}\n`);
 console.log(`You answered ${candidateAnswers[i]}`);
 console.log(`The correct answer is ${correctAnswers[i]}`);
  }
