@@ -14,31 +14,28 @@ const input = require('readline-sync');
 let numberCorrect = 0;
 let overallGrade;
 
+
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question("Please enter your name: ");
-console.log("Hello "  + candidateName);
+console.log("Candidate Name: "  + candidateName);
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
-
   for (let i = 0; i < questions.length; i++){
   candidateAnswers[i] = input.question(questions[i]); 
 
-  
-  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
   }
  //console.log("Incorrect!");  
   }
-
 }
-
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+
 
  for (let i = 0; i < candidateAnswers.length; i++){
 console.log(`${questions[i]}\n`);   
@@ -55,15 +52,12 @@ console.log(`Your overall grade is ${overallGrade}\n`);
   } else {
     console.log('You have failed!');
   }
-
   return grade;
-
 }
 
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
