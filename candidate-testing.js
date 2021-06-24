@@ -11,7 +11,8 @@ let questions;
 let correctAnswers = [];
 let candidateAnswers = [];
 const input = require('readline-sync');
-let numberCorrect;
+let numberCorrect = 0;
+let overallGrade;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -22,7 +23,7 @@ console.log("Hello "  + candidateName);
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
- questions = ['Who was the first American woman in space?', 'True or false: 5 kilometer == 5000 meters?', '(5 + 3)/2 * 10 = ?',"Given the array [8, 'orbit', 'trajectory' 45], what entry is at index 2?", "What is the minimum crew size for the ISS?"];
+ questions = ['1. Who was the first American woman in space?', '2. True or false: 5000 kilometer == 5 kilometers?', '3. (5 + 3)/2 * 10 = ?',"4. Given the array [8, 'orbit', 'trajectory' 45], what entry is at index 2?", "5. What is the minimum crew size for the ISS?"];
    
  correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 
@@ -35,32 +36,32 @@ function askQuestion() {
 numberCorrect = numberCorrect + 1;
   }
   else {
+    numberCorrect = 0;
     //console.log("Incorrect!");
   }
   }
 
-//
-
 }
-
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
  for (let i = 0; i < candidateAnswers.length; i++){
+console.log(`${questions[i]}`);
 console.log(`You answered ${candidateAnswers[i]}`);
 console.log(`The correct answer is ${correctAnswers[i]}`);
  }
 
+let overallGrade = numberCorrect / 5*100 + '%';
+console.log(`Your overall grade is ${overallGrade}`);
 
-  let grade = numberCorrect / 4;
+  let grade = numberCorrect / 5;
   if (grade >= .8){
     console.log('You have passed!');
   } else {
     console.log('You have failed!');
   }
 
-console.log(grade);
   return grade;
 
 }
