@@ -29,8 +29,9 @@ function askQuestion() {
 
 
 
-  for (let i = 0; i < questions.length; i++) {
+  for (let i = 0; i < questions.length; i++){
   candidateAnswers[i] = input.question(questions[i]);
+  
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
@@ -47,12 +48,12 @@ function gradeQuiz(candidateAnswers) {
 
  for (let i = 0; i < candidateAnswers.length; i++){
 console.log(`${questions[i]}\n`);
-console.log(`You answered ${candidateAnswers[i]}`);
-console.log(`The correct answer is ${correctAnswers[i]}`);
+console.log(`You answered ${candidateAnswers[i]}\n`);
+console.log(`The correct answer is ${correctAnswers[i]}\n`);
  }
 
 let overallGrade = numberCorrect / 5*100 + '%';
-console.log(`Your overall grade is ${overallGrade}`);
+console.log(`Your overall grade is ${overallGrade}\n`);
 
   let grade = numberCorrect / 5;
   if (grade >= .8){
