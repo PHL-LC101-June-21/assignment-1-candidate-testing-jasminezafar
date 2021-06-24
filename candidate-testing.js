@@ -31,12 +31,13 @@ function askQuestion() {
 
   for (let i = 0; i < questions.length; i++){
   candidateAnswers[i] = input.question(questions[i]); 
-  console.log('\n');
+
   
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
   }
+  console.log('\n');
  
     //console.log("Incorrect!");
   
