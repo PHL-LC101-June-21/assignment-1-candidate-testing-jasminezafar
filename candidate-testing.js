@@ -37,7 +37,7 @@ function askQuestion() {
 //console.log("Correct");
 numberCorrect = numberCorrect + 1;
   }
-  console.log('\n');
+
  
     //console.log("Incorrect!");
   
