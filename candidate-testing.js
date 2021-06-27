@@ -43,7 +43,7 @@ console.log(`Correct Answer: ${correctAnswers[i]}\n`);
  }
 
 overallGrade = numberCorrect / 5*100 + '%';
-console.log('>>> ' + `Overall Grade: ${overallGrade}` + ' <<<');
+console.log('>>> ' + `Overall Grade: ${overallGrade} ` + `${numberCorrect} of 5 responses correct` + ' <<<');
 
   let grade = numberCorrect / 5;
   if (grade >= .8){
